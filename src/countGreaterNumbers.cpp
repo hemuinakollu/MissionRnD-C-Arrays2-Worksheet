@@ -13,13 +13,41 @@ ERROR CASES: Return NULL for invalid inputs.
 
 NOTES:
 */
-
+#include<iostream>
 struct transaction {
 	int amount;
 	char date[11];
 	char description[20];
 };
-
+int mycompare(char *a, char *b)
+{
+	int i = 0;
+	for (i = 0; i < 10; i++)
+	{
+		if (a[i] != b[i])
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
 int countGreaterNumbers(struct transaction *Arr, int len, char *date) {
-	return -1;
+	if (Arr == NULL || len <= 0)
+		return NULL;
+	else
+	{
+		int j = 0, k = -1;
+		for (j = 0; j < len; j++)
+		{
+			if (mycompare(Arr[j].date, date))
+			{
+				k = j;
+			}
+		}
+		if (k != -1)
+			return len - k - 1;
+		else
+			return 0;
+	}
+	
 }
