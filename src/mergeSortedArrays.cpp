@@ -40,13 +40,13 @@ int date_compare(char a[], char b[])
 
 }
 struct transaction * mergeSortedArrays(struct transaction *A, int ALen, struct transaction *B, int BLen) {
-	/*if (A == NULL || B == NULL || ALen <= 0 || BLen <= 0)
+	if (A == NULL || B == NULL || ALen <= 0 || BLen <= 0)
 	{
 		return NULL;
 	}
 	else
 	{
-		struct transaction* final1= (struct transaction*)malloc(sizeof(struct transaction));
+		struct transaction final1[20];
 		int i = 0, j = 0, k = 0,c=0;
 		while (i < ALen && j < BLen)
 		{
@@ -86,8 +86,8 @@ struct transaction * mergeSortedArrays(struct transaction *A, int ALen, struct t
 			j++;
 		}
 		return final1;
-	}*/
-	return NULL;
+	}
+	
 
 
 }
