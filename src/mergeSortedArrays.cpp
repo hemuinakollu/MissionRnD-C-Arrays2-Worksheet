@@ -21,7 +21,73 @@ struct transaction {
 	char date[11];
 	char description[20];
 };
+int date_compare(char a[], char b[])
+{
+	int sum1 = 0, sum2 = 0;
+	for (int i = 5; i < 10; i++)
+	{
+		sum1 = sum1 * 10;
+		sum1 = sum1 + (int)a[i];
+		sum2 = sum2 * 10;
+		sum2 = sum2 + (int)b[i];
+	}
+	if (sum1 < sum2)
+		return 1;
+	else if (sum1 > sum2)
+		return 2;
+	else
+		return 3;
 
+}
 struct transaction * mergeSortedArrays(struct transaction *A, int ALen, struct transaction *B, int BLen) {
+	/*if (A == NULL || B == NULL || ALen <= 0 || BLen <= 0)
+	{
+		return NULL;
+	}
+	else
+	{
+		struct transaction* final1= (struct transaction*)malloc(sizeof(struct transaction));
+		int i = 0, j = 0, k = 0,c=0;
+		while (i < ALen && j < BLen)
+		{
+			c=date_compare(A[i].date, B[j].date);
+			if (c == 1)
+			{
+				final1[k] = A[i];
+				k++;
+				i++;
+			}
+			else if (c == 2)
+			{
+				final1[k] = B[j];
+				k++;
+				j++;
+			}
+			else
+			{
+				final1[k] = A[i];
+				k++;
+				final1[k] = B[j];
+				k++;
+				i++;
+				j++;
+			}
+		}
+		while (i<ALen)
+		{
+			final1[k] = A[i];
+			k++;
+			i++;
+		}
+		while (j < BLen)
+		{
+			final1[k] = B[j];
+			k++;
+			j++;
+		}
+		return final1;
+	}*/
 	return NULL;
+
+
 }
